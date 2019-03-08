@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // PUBLIC VARIABLES
-    public float speed = 10.0f;
-
+    public float speed = 3.0f;
+    public float rotspeed = 150.0f;
     // PRIVATE VARIABLES
     private Rigidbody2D rBody;
 
@@ -27,7 +27,30 @@ public class PlayerController : MonoBehaviour
 
         // Raycast from your feet downwards towards the ground
         //Physics2D.Raycast()
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(new Vector2(0, -speed * Time.deltaTime));
+            if (Input.GetKey(KeyCode.A))
+                transform.Rotate(new Vector3(0, 0, -rotspeed * Time.deltaTime));
+            if (Input.GetKey(KeyCode.D))
+                transform.Rotate(new Vector3(0, 0, rotspeed * Time.deltaTime));
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(new Vector2(0, speed * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
+        {
+            transform.Rotate(new Vector3(0, 0, rotspeed * Time.deltaTime));
+        }
+        if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+        {
+            transform.Rotate(new Vector3(0, 0, -rotspeed * Time.deltaTime));
+        }
+
+
     }
+
 
     /// <summary>
     /// this function is called every fixed framerate frame, if the MonoBehaviour is enabled.
@@ -36,11 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horiz = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
-        GetComponent<Rigidbody2D>().velocity = new Vector2(horiz, vert);
 
-        //rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
-        rBody.velocity = new Vector2(horiz * speed, vert * speed);
     }
+
 }
