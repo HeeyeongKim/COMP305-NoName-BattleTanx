@@ -11,10 +11,21 @@ public class EnemyManager : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
     public WayPointPath wayPointSystem;
+    public Transform target;
+    public GameObject turret;
 
     void Update()
     {
         MoveWayPoints();    
+        TurretRotation();
+    }
+    void TurretRotation()
+    {
+        Vector3 targetPosition = target.position;
+
+        Vector2 direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
+
+        turret.transform.up = direction;
     }
 
     void MoveWayPoints()

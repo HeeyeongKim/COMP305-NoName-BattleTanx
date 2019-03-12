@@ -19,10 +19,10 @@ public class Motor : MonoBehaviour
 
     void Update()
     {
-        TurrentRotation();
+        TurretRotation();
     }
 
-    void TurrentRotation()
+    void TurretRotation()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
