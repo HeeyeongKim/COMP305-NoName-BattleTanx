@@ -8,6 +8,9 @@ public class MoveBarrierScript : MonoBehaviour
     bool movingRight = true;
     Vector3 localScale;
 
+    public GameObject explosion;
+    public GameObject newBarrier;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,6 @@ public class MoveBarrierScript : MonoBehaviour
         localScale.x = -1;
         transform.transform.localScale = localScale;
         rb.velocity = new Vector2(5,0);
-
     }
 
     void moveLeft()
@@ -45,6 +47,22 @@ public class MoveBarrierScript : MonoBehaviour
         localScale.x = 1;
         transform.transform.localScale = localScale;
         rb.velocity = new Vector2(-5,0);
+    }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+
+            Destroy(other.gameObject);  // this destroys the player
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("BulletRed"))
+        {
+            Debug.Log("bullet 2");
+
+            // TODO
+        }
     }
 }
