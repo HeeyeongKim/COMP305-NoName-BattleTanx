@@ -7,6 +7,7 @@ public class WayPointPath : MonoBehaviour
     public List<WayPoint> wayPoints = new List<WayPoint>();
     public Color lineColor = Color.white;
     public Color SphereColor = Color.white;
+    public GameObject turret;
 
     void OnDrawGizmos()
     {
@@ -47,6 +48,21 @@ public class WayPointPath : MonoBehaviour
             Gizmos.DrawWireSphere(currentWaypoint, 0.2f);
         }
     }
+
+    //void Update()
+    //{
+    //    TurrentRotation();
+    //}
+
+    //void TurrentRotation()
+    //{
+    //    Vector3 mousePosition = Input.mousePosition;
+    //    mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+    //    Vector2 direction = new Vector2(mousePosition.x - turret.transform.position.x, mousePosition.y - turret.transform.position.y);
+
+    //    turret.transform.up = direction;
+    //}
 
 
 }

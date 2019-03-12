@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
 
     public float bulletSpeed;
     public float bulletDamage;
 
     public float maxTimeAlive;
+
     void FixedUpdate()
     {
+
         this.transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);    
     }
 
@@ -27,7 +29,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Destroy(other.gameObject); // this destroys the enemy
             Destroy(gameObject); // this destroys the bullet
@@ -38,4 +40,5 @@ public class Bullet : MonoBehaviour
         }
 
     }
+
 }
