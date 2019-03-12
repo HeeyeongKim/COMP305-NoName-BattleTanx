@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Obstacle
+  - targetWood
   layers:
   - Default
   - TransparentFX
@@ -38,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2360183203
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Turret
+    uniqueID: 2963351037
     locked: 0
