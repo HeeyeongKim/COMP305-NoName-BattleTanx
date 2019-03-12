@@ -535,7 +535,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &776104059
+--- !u!61 &1405820950
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -764,6 +764,10 @@ GameObject:
   - component: {fileID: 1703381237}
   - component: {fileID: 1703381252}
   - component: {fileID: 1703381251}
+  - component: {fileID: 1703381239}
+  - component: {fileID: 1703381242}
+  - component: {fileID: 1703381241}
+  - component: {fileID: 1703381240}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1157,6 +1161,80 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &1703381239
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703381235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -11.228667, y: 6.012189}
+  - {x: 0.021502972, y: 6.045223}
+  - {x: 11.212772, y: 6.045223}
+--- !u!68 &1703381240
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703381235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 11.198025, y: 6.1031814}
+  - {x: 11.201257, y: -6.491244}
+--- !u!68 &1703381241
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703381235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -11.21295, y: 5.9973454}
+  - {x: -11.245008, y: -6.455965}
+--- !u!68 &1703381242
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703381235}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -11.291134, y: -6.4480314}
+  - {x: 0.038120747, y: -6.433964}
+  - {x: 11.237217, y: -6.439681}
 --- !u!19719996 &1703381251
 TilemapCollider2D:
   m_ObjectHideFlags: 0
