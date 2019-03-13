@@ -50,7 +50,7 @@ public class HomingMissileScript : MonoBehaviour
 
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            Destroy(target);
+            Destroy(other.gameObject);
         }
     }
 
