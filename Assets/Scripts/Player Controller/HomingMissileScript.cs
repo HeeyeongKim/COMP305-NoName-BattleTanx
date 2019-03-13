@@ -48,7 +48,7 @@ public class HomingMissileScript : MonoBehaviour
             //Destroy(other.gameObject); // this destroys the enemy
             //Destroy(gameObject); // this destroys the bullet
 
-            //Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(target);
         }

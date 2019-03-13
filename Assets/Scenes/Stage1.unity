@@ -545,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   firePoint: {fileID: 1895136215}
-  bullet: {fileID: 7876285564222970113, guid: a417d4a380564ce47aa907592dc73236, type: 3}
+  bullet: {fileID: 2304142978571751851, guid: 94b799b26d8aaa54c953f3faec7da2db, type: 3}
 --- !u!61 &476183148
 BoxCollider2D:
   m_ObjectHideFlags: 0
