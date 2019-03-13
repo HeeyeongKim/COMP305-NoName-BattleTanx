@@ -52,6 +52,8 @@ public class MoveBarrierScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        //m_ObjectCollider.isTrigger = false;
+
         /** 
         if (other.gameObject.CompareTag("Player"))
         {
