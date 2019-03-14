@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HomingMissileScript : MonoBehaviour
 {
@@ -39,18 +40,27 @@ public class HomingMissileScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("OnTriggerEnter2D method");
+        //Debug.Log("OnTriggerEnter2D method");
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("targetWood!!");
+            //Debug.Log("targetWood!!");
 
             //Destroy(other.gameObject); // this destroys the enemy
             //Destroy(gameObject); // this destroys the bullet
 
-            //Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-            Destroy(target);
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("targetWood"))
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+            Destroy(other.gameObject);
+
+            SceneManager.LoadScene("Stage1");
         }
     }
 

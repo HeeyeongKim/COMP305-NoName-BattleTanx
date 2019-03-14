@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour
     // What happens when I click the start button?
     public void StartGame() 
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("Tutorial");
     }
 
     // What happens when I click the quit button?

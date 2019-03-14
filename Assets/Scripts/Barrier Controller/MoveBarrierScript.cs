@@ -40,14 +40,14 @@ public class MoveBarrierScript : MonoBehaviour
     {
         localScale.x = -0.8f;
         transform.transform.localScale = localScale;
-        rb.velocity = new Vector2(5,0);
+        rb.velocity = new Vector2(3,0);
     }
 
     void moveLeft()
     {
         localScale.x = 0.8f;
         transform.transform.localScale = localScale;
-        rb.velocity = new Vector2(-5,0);
+        rb.velocity = new Vector2(-3,0);
     }
 
     void OnCollisionEnter2D(Collision2D other)
