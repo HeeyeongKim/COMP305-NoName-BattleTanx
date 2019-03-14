@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 141392761}
   m_Layer: 0
   m_Name: fenceRed (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,7 +592,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &484790924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &776104059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &794153956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,7 +1947,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1469982793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 1518213940}
   m_Layer: 0
   m_Name: fenceRed
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2216,7 +2216,7 @@ GameObject:
   - component: {fileID: 1563100173}
   m_Layer: 0
   m_Name: fenceRed (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3260,7 +3260,7 @@ GameObject:
   - component: {fileID: 2000078384}
   m_Layer: 0
   m_Name: fenceRed (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
