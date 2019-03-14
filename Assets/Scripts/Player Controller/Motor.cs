@@ -1,13 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Motor : MonoBehaviour
 {
+    public int health = 3;
     public float moveSpeed = 1;
     public float rotateSpeed = 12;
     public GameObject turret;
+    public Text healthText;
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        healthText.text = "Health: " + health.ToString();
+    }
     void FixedUpdate()
     {
         float moveVector = Input.GetAxis("Vertical");
