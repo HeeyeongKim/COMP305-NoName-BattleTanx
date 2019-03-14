@@ -21,11 +21,15 @@ public class EnemyManager : MonoBehaviour
     }
     void TurretRotation()
     {
-        Vector3 targetPosition = target.position;
+        if(target != null)
+        {
+            Vector3 targetPosition = target.position;
 
-        Vector2 direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
+            Vector2 direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
 
-        turret.transform.up = direction;
+            turret.transform.up = direction;
+        }
+
     }
 
     void MoveWayPoints()
