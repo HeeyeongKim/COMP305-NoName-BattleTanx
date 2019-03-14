@@ -53,7 +53,10 @@ public class HomingMissileScript : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         }
-
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(other.gameObject);
+        }
         if (other.gameObject.CompareTag("targetWood"))
         {
             Instantiate(explosion, transform.position, Quaternion.identity);

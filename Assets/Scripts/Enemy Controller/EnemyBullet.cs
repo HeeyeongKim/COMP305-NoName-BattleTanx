@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -31,7 +32,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject); // this destroys the enemy
+            int playerHealth = --other.gameObject.GetComponent<Motor>().health;
+            other.gameObject.GetComponent<Motor>().healthText.text = "Health: " + playerHealth.ToString();
+            if(playerHealth <= 0) {
+                Destroy(other.gameObject); // this destroys the player
+                //SceneManager.LoadScene("Stage1");
+            }
             Destroy(gameObject); // this destroys the bullet
         }
         else if (other.gameObject.CompareTag("Obstacle"))
