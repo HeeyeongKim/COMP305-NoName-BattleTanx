@@ -97,6 +97,8 @@ MonoBehaviour:
   bulletSpeed: 4
   bulletDamage: 0
   maxTimeAlive: 3
+  explosionPref: {fileID: 5210277940614115417, guid: 8b985aefac916644baa53b96837a2753,
+    type: 3}
 --- !u!50 &6082346783201138781
 Rigidbody2D:
   serializedVersion: 4
