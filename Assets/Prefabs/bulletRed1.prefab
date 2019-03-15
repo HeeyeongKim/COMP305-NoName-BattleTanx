@@ -146,4 +146,4 @@ MonoBehaviour:
   rotationSpeed: 1
   bulletSpeed: 4
   bulletDamage: 0
-  maxTimeAlive: 2
+  maxTimeAlive: 6

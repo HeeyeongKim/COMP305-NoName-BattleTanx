@@ -55,7 +55,7 @@ public class HomingMissileScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
         if (other.gameObject.CompareTag("targetWood"))
         {
