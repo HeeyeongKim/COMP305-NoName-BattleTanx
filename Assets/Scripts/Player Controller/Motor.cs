@@ -19,6 +19,7 @@ public class Motor : MonoBehaviour
     {
         healthText.text = "Health: " + health.ToString();
     }
+    
     void FixedUpdate()
     {
         float moveVector = Input.GetAxis("Vertical");

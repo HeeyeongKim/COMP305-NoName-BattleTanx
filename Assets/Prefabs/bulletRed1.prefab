@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7951105919473705821}
   - component: {fileID: 4663454949333847599}
   - component: {fileID: 7568967953797543631}
-  - component: {fileID: 2703006984298345436}
   - component: {fileID: 2554812600267907862}
   m_Layer: 0
   m_Name: bulletRed1
@@ -130,19 +129,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &2703006984298345436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2304142978571751851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37be5043df6eb41a8aad6d7c1fd17a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyTime: 1
 --- !u!114 &2554812600267907862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab1e93bba07983744b3e086d26b6fa21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1662865243858908969, guid: 6e8abf9928079c644814addc377355f7,
+  explosionPref: {fileID: 5210277940614115417, guid: 8b985aefac916644baa53b96837a2753,
     type: 3}
   rotationSpeed: 1
   bulletSpeed: 4

@@ -8,8 +8,8 @@ public class EnemyBullet : MonoBehaviour
 
     public float bulletSpeed;
     public float bulletDamage;
-
     public float maxTimeAlive;
+    public GameObject explosionPref;
 
     void FixedUpdate()
     {
@@ -35,8 +35,9 @@ public class EnemyBullet : MonoBehaviour
             int playerHealth = --other.gameObject.GetComponent<Motor>().health;
             other.gameObject.GetComponent<Motor>().healthText.text = "Health: " + playerHealth.ToString();
             if(playerHealth <= 0) {
+                Instantiate(explosionPref, other.transform.position, other.transform.rotation);
                 Destroy(other.gameObject); // this destroys the player
-                //SceneManager.LoadScene("Stage1");
+                SceneManager.LoadScene("GameOver");
             }
             Destroy(gameObject); // this destroys the bullet
         }
