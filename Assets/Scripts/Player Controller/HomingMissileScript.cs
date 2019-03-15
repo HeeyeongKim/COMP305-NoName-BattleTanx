@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HomingMissileScript : MonoBehaviour
 {
     GameObject target;
-    public GameObject explosion;
+    public GameObject explosionPref;
     public float rotationSpeed = 1f;
 
     Quaternion rotateToTarget;
@@ -49,7 +49,7 @@ public class HomingMissileScript : MonoBehaviour
             //Destroy(other.gameObject); // this destroys the enemy
             //Destroy(gameObject); // this destroys the bullet
 
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
         }
@@ -59,7 +59,7 @@ public class HomingMissileScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("targetWood"))
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
 

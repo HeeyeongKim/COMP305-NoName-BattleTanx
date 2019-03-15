@@ -7,8 +7,9 @@ public class Bullet : MonoBehaviour
 
     public float bulletSpeed;
     public float bulletDamage;
-
     public float maxTimeAlive;
+    public GameObject explosionPref;
+
     void FixedUpdate()
     {
         this.transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);    
@@ -29,6 +30,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(explosionPref, other.transform.position, other.transform.rotation);
             Destroy(other.gameObject); // this destroys the enemy
             Destroy(gameObject); // this destroys the bullet
         }
