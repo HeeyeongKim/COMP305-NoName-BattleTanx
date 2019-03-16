@@ -32,14 +32,27 @@ public class HomingMissileScript : MonoBehaviour
 
         StartCoroutine(SelfDestruct());
 
-        txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
-        anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
+        if (GameObject.FindWithTag("Score") != null)
+        {
+            txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
+        }
+
+        if (GameObject.FindWithTag("stage1menu") != null)
+        {
+            anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
+        }
+        
+
     }
 
     void Update()
     {
         //Debug.Log(score);
-        txt4score.text = score + " / 3";
+        if (txt4score != null)
+        {
+            txt4score.text = score + " / 3";
+        }
+
         if (score == 3)
         {
             anim.SetBool("isFinished", true);
