@@ -9,6 +9,8 @@ TagManager:
   - targetWood
   - BulletRed
   - FenceRed
+  - Score
+  - stage1menu
   layers:
   - Default
   - TransparentFX
@@ -51,4 +53,7 @@ TagManager:
     locked: 0
   - name: Turret
     uniqueID: 2963351037
+    locked: 0
+  - name: Text
+    uniqueID: 654313593
     locked: 0

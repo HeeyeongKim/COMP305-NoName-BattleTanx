@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HomingMissileScript : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class HomingMissileScript : MonoBehaviour
     public float bulletDamage;
     public float maxTimeAlive;
 
+    private static int score;
+    public Text txt4score;
+
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +31,32 @@ public class HomingMissileScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         StartCoroutine(SelfDestruct());
+
+        if (GameObject.FindWithTag("Score") != null)
+        {
+            txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
+        }
+
+        if (GameObject.FindWithTag("stage1menu") != null)
+        {
+            anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
+        }
+        
+
+    }
+
+    void Update()
+    {
+        //Debug.Log(score);
+        if (txt4score != null)
+        {
+            txt4score.text = score + " / 3";
+        }
+
+        if (score == 3)
+        {
+            anim.SetBool("isFinished", true);
+        }
     }
 
     void FixedUpdate()
@@ -52,6 +84,8 @@ public class HomingMissileScript : MonoBehaviour
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
+
+            score = score + 1;
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
