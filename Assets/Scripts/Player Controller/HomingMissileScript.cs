@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 public class HomingMissileScript : MonoBehaviour
 {
     GameObject target;
@@ -19,25 +21,30 @@ public class HomingMissileScript : MonoBehaviour
     public float bulletDamage;
     public float maxTimeAlive;
 
-    private static int score;
+    public static int score;
     public Text txt4score;
 
     private Animator anim;
 
+    private Scene currentScene;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        //Debug.Log(currentScene.name);
+
         target = GameObject.Find("targetWood");
         rb = GetComponent<Rigidbody2D>();
 
         StartCoroutine(SelfDestruct());
 
-        if (GameObject.FindWithTag("Score") != null)
+        if (currentScene.name.Equals("Stage1"))
         {
             txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
         }
 
-        if (GameObject.FindWithTag("stage1menu") != null)
+        if (currentScene.name.Equals("Stage1"))
         {
             anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
         }
@@ -45,15 +52,16 @@ public class HomingMissileScript : MonoBehaviour
 
     }
 
+
     void Update()
     {
-        //Debug.Log(score);
-        if (txt4score != null)
+
+        if (currentScene.name.Equals("Stage1"))
         {
             txt4score.text = score + " / 3";
         }
 
-        if (score == 3)
+        if (currentScene.name.Equals("Stage1") && score == 3)
         {
             anim.SetBool("isFinished", true);
         }
