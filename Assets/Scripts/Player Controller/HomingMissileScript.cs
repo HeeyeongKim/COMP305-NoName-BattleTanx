@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
-
 public class HomingMissileScript : MonoBehaviour
 {
     GameObject target;
@@ -100,8 +98,6 @@ public class HomingMissileScript : MonoBehaviour
             Destroy(other.gameObject);
 
             anim.SetBool("isFinished", true);
-
-            //SceneManager.LoadScene("Stage1");
         }
     }
 
