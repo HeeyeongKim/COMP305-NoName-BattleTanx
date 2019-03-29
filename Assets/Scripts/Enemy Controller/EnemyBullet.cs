@@ -34,8 +34,11 @@ public class EnemyBullet : MonoBehaviour
         {
             int playerHealth = --other.gameObject.GetComponent<Motor>().health;
             other.gameObject.GetComponent<Motor>().healthText.text = "Health: " + playerHealth.ToString();
-            if(playerHealth <= 0) {
+
+            if (playerHealth <= 0) {
                 Debug.Log(other.gameObject.name);
+                //Initialize score;
+                HomingMissileScript.score = 0;
                 Instantiate(explosionPref, other.transform.position, other.transform.rotation);
                 Destroy(other.gameObject); // this destroys the player
                 SceneManager.LoadScene("GameOver");
