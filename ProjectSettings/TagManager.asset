@@ -11,6 +11,7 @@ TagManager:
   - FenceRed
   - Score
   - stage1menu
+  - levelCompleted
   layers:
   - Default
   - TransparentFX

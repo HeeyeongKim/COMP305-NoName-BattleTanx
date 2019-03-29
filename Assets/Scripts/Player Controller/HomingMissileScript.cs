@@ -44,14 +44,13 @@ public class HomingMissileScript : MonoBehaviour
             txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
         }
 
-        if (currentScene.name.Equals("Stage1"))
+    /*     if (currentScene.name.Equals("Stage1"))
         {
             anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
-        }
-        
+        } */
 
+        anim = (GameObject.FindWithTag("levelCompleted")).GetComponent<Animator>();
     }
-
 
     void Update()
     {
@@ -84,11 +83,6 @@ public class HomingMissileScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //Debug.Log("targetWood!!");
-
-            //Destroy(other.gameObject); // this destroys the enemy
-            //Destroy(gameObject); // this destroys the bullet
-
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
@@ -105,7 +99,9 @@ public class HomingMissileScript : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(other.gameObject);
 
-            SceneManager.LoadScene("Stage1");
+            anim.SetBool("isFinished", true);
+
+            //SceneManager.LoadScene("Stage1");
         }
     }
 
