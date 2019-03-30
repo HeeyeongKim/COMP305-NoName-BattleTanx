@@ -35,7 +35,11 @@ public class EnemyBullet : MonoBehaviour
             //When the player 1 is shot, reduce the value of its health bar
             if (other.gameObject.CompareTag("Player"))
             {
-                HealthBarScript.health -= 10f;
+                if (this.gameObject.tag == "BlackBullet"){
+                    HealthBarScript.health -= 10f;
+                } else if (this.gameObject.tag == "GreenBullet"){
+                    HealthBarScript.health -= 20f;
+                }
                 
                 //When the value of health bar is less than zero, remove the player 1 gameobject.
                 if (HealthBarScript.health <= 0)
@@ -48,19 +52,23 @@ public class EnemyBullet : MonoBehaviour
                 }
             }
             //When the player 2 is shot, reduce the value of its health bar
-            else
+            else if(other.gameObject.CompareTag("Player2"))
             {
-                HealthBarScript4Player2.health -= 10f;
+                if (this.gameObject.tag == "BlackBullet"){
+                    HealthBarScript4Player2.health -= 10f;
+                } else if (this.gameObject.tag == "GreenBullet"){
+                    HealthBarScript4Player2.health -= 20f;
+                }
+
                 if (HealthBarScript4Player2.health <= 0)
                 {
                     Debug.Log(other.gameObject.name);
 
                     Instantiate(explosionPref, other.transform.position, other.transform.rotation);
-                    Destroy(other.gameObject); // this destroys the player
+                    Destroy(other.gameObject); // destroys the player
 
                 }
             }
-
 
              //When both tanks are destroyed, the game ends.
             if ((GameObject.FindWithTag("Player") == null || HealthBarScript.health <= 0)
