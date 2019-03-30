@@ -13,7 +13,6 @@ public class EnemyBullet : MonoBehaviour
 
     void FixedUpdate()
     {
-
         this.transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);    
     }
 
@@ -32,19 +31,18 @@ public class EnemyBullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            int playerHealth = --other.gameObject.GetComponent<Motor>().health;
-            other.gameObject.GetComponent<Motor>().healthText.text = "Health: " + playerHealth.ToString();
-            if(playerHealth <= 0) {
-                Debug.Log(other.gameObject.name);
+            HealthBarScript.health -=10f;
+            if (HealthBarScript.health <= 0) {
+                HomingMissileScript.score = 0; // initialize score;
                 Instantiate(explosionPref, other.transform.position, other.transform.rotation);
-                Destroy(other.gameObject); // this destroys the player
+                Destroy(other.gameObject); // destroys the player
                 SceneManager.LoadScene("GameOver");
             }
-            Destroy(gameObject); // this destroys the bullet
+            Destroy(gameObject); // destroys the bullet
         }
         else if (other.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(gameObject); // this destroys the bullet
+            Destroy(gameObject); // destroys the bullet
         }
 
     }
