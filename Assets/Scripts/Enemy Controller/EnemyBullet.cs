@@ -9,7 +9,8 @@ public class EnemyBullet : MonoBehaviour
     public float bulletSpeed;
     public float bulletDamage;
     public float maxTimeAlive;
-    public GameObject explosionPref;
+    public GameObject explosionPref; // for tanks
+    public GameObject explosionPref2; // for woods
 
     void FixedUpdate()
     {
@@ -44,11 +45,8 @@ public class EnemyBullet : MonoBehaviour
                 //When the value of health bar is less than zero, remove the player 1 gameobject.
                 if (HealthBarScript.health <= 0)
                 {
-                    Debug.Log(other.gameObject.name);
-
                     Instantiate(explosionPref, other.transform.position, other.transform.rotation);
                     Destroy(other.gameObject); // this destroys the player
-
                 }
             }
             //When the player 2 is shot, reduce the value of its health bar
@@ -86,6 +84,11 @@ public class EnemyBullet : MonoBehaviour
             else if (other.gameObject.CompareTag("Obstacle"))
             {
                 Destroy(gameObject); // destroys the bullet
+            }
+            else if (other.gameObject.CompareTag("Wood")){
+                Destroy(gameObject); // destroys the bullet
+                Instantiate(explosionPref2, other.transform.position, other.transform.rotation);
+                Destroy(other.gameObject); // destroys the wood
             }
 
         }
