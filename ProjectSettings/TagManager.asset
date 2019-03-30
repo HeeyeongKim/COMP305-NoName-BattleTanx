@@ -13,6 +13,8 @@ TagManager:
   - stage1menu
   - levelCompleted
   - Player2
+  - BlackBullet
+  - GreenBullet
   layers:
   - Default
   - TransparentFX

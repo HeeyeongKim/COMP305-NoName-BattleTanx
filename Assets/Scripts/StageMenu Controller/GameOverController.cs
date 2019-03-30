@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage1MenuController : MonoBehaviour
+public class GameOverController : MonoBehaviour
 {
-    public void NextGame()
+   // What happens when I click the start button?
+    public void StartGame() 
     {
-        SceneManager.LoadScene("Stage2");
+        SceneManager.LoadScene("Stage1");
     }
 
     // What happens when I click the quit button?

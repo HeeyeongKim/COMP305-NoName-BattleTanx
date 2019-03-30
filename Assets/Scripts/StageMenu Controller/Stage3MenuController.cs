@@ -13,6 +13,11 @@ public class Stage3MenuController : MonoBehaviour
     // What happens when I click the quit button?
     public void QuitGame()
     {
-        SceneManager.LoadScene("GameOver");
+        // Preprocessor Directives
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+             Application.Quit();
+        #endif
     }
 }
