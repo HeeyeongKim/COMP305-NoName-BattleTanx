@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 131665213}
   m_Layer: 0
   m_Name: Enemy2nd2
-  m_TagString: Enemy2
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf94701b9d0c3146b0b0695044493e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtScore: {fileID: 765706025}
 --- !u!4 &284726233
 Transform:
   m_ObjectHideFlags: 0
@@ -1021,7 +1020,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 284726232}
+      - m_Target: {fileID: 0}
         m_MethodName: NextGame
         m_Mode: 1
         m_Arguments:
@@ -1150,7 +1149,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 284726232}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1276,7 +1275,7 @@ GameObject:
   - component: {fileID: 634639151}
   m_Layer: 0
   m_Name: Enemy2nd
-  m_TagString: Enemy2
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1674,85 +1673,6 @@ Transform:
   m_Father: {fileID: 886422578}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &765706023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 765706024}
-  - component: {fileID: 765706026}
-  - component: {fileID: 765706025}
-  m_Layer: 5
-  m_Name: Score
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &765706024
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765706023}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1061214491}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1.1999999, y: -6.399994}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &765706025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765706023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: d4b5b858d47c5144ca701164eb8e072c, type: 3}
-    m_FontSize: 25
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'SCORE:'
---- !u!222 &765706026
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765706023}
-  m_CullTransparentMesh: 0
 --- !u!1 &790971040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,7 +2404,6 @@ RectTransform:
   - {fileID: 1454243392}
   - {fileID: 1499640476}
   - {fileID: 181212661}
-  - {fileID: 765706024}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3438,7 +3357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1454243392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3874,7 +3793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   firePoint: {fileID: 1207373556}
-  bullet: {fileID: 2304142978571751851, guid: 94b799b26d8aaa54c953f3faec7da2db, type: 3}
+  bullet: {fileID: 7876285564222970113, guid: a417d4a380564ce47aa907592dc73236, type: 3}
 --- !u!114 &1547563796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3887,8 +3806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65429ec127f2b2499052f3b300200f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
   moveSpeed: 2
   rotateSpeed: 12
+  healthText: {fileID: 0}
 --- !u!212 &1547563797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4935,7 +4856,7 @@ GameObject:
   - component: {fileID: 2077877166}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

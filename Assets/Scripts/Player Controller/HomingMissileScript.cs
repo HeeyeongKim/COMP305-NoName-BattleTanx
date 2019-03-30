@@ -23,9 +23,37 @@ public class HomingMissileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        //Debug.Log(currentScene.name);
+
         target = GameObject.Find("targetWood");
+
         StartCoroutine(SelfDestruct());
+
+        if (currentScene.name.Equals("Stage1"))
+        {
+            txt4score = (GameObject.FindWithTag("Score")).GetComponent<Text>();
+        }
+
+    /*     if (currentScene.name.Equals("Stage1"))
+        {
+            anim = (GameObject.FindWithTag("stage1menu")).GetComponent<Animator>();
+        } */
+
         anim = (GameObject.FindWithTag("levelCompleted")).GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (currentScene.name.Equals("Stage1"))
+        {
+            txt4score.text = score + " / 3";
+        }
+
+        if (currentScene.name.Equals("Stage1") && score == 3)
+        {
+            anim.SetBool("isFinished", true);
+        }
     }
 
     void FixedUpdate()
@@ -41,26 +69,17 @@ public class HomingMissileScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
+        //Debug.Log("OnTriggerEnter2D method");
+
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
 
-            if(other.gameObject.CompareTag("Enemy")) 
-            {
-                score += 10;
-                Stage1MenuController.score = score;
-                Stage2MenuController.score = score;
-                Stage3MenuController.score = score;
-            }
-            if(other.gameObject.CompareTag("Enemy2"))
-            {
-                score += 20;
-                Stage3MenuController.score = score;
-            }
-        } 
-    
+            score = score + 1;
+        }
+
         if (other.gameObject.CompareTag("Obstacle"))
         {
             //Instantiate(explosionPref, transform.position, Quaternion.identity);
@@ -73,16 +92,12 @@ public class HomingMissileScript : MonoBehaviour
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
-            GameFinished();
+
+            anim.SetBool("isFinished", true);
         }
     }
 
-    public void GameFinished(){
-        anim.SetBool("isFinished", true);
-    }
-
-    void PauseGame() {
+    void pauseGame() {
         Time.timeScale = 0;
     }
-
 }
