@@ -21,14 +21,52 @@ public class EnemyManager : MonoBehaviour
     }
     void TurretRotation()
     {
-        if(target != null)
-        {
-            Vector3 targetPosition = target.position;
 
-            Vector2 direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
+        Transform tfPlayer = null;
+        Transform tfPlayer2 = null;
+
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            tfPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        }
+
+        if (GameObject.FindWithTag("Player2") != null)
+        {
+            tfPlayer2 = GameObject.FindWithTag("Player2").GetComponent<Transform>();
+        }
+
+
+        Vector3 targetPosition;
+        Vector2 direction;
+
+        //If the appointed target is still alive, aim at the target conutinuously.
+        if (target != null)
+        {
+            targetPosition = target.position;
+
+            direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
 
             turret.transform.up = direction;
         }
+        //If the appointed target is already destroyed, try to aim at another alive target.
+        else if (tfPlayer != null)
+        {
+            targetPosition = tfPlayer.position;
+
+            direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
+
+            turret.transform.up = direction;
+        }
+        else if (tfPlayer2 != null)
+        {
+            targetPosition = tfPlayer2.position;
+
+            direction = new Vector2(targetPosition.x - turret.transform.position.x, targetPosition.y - turret.transform.position.y);
+
+            turret.transform.up = direction;
+
+        }
+
 
     }
 

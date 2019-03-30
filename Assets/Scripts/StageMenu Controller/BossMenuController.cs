@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Stage3MenuController : MonoBehaviour
+public class BossMenuController : MonoBehaviour
 {
     private Animator anim; // board animation after level completed
     public Text txtScore;
@@ -19,22 +18,15 @@ public class Stage3MenuController : MonoBehaviour
     {
         txtScore.text = "SCORE: " + score.ToString();
 
-        if (score >= 140)
+        if (score >= 200)
         {
             anim.SetBool("isFinished", true);
         }
     }
 
-    public void NextGame()
-    {
-        BossMenuController.score = score;
-        SceneManager.LoadScene("Boss");
-    }
-
     // What happens when I click the quit button?
     public void QuitGame()
     {
-        HomingMissileScript.score = 0;
         // Preprocessor Directives
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

@@ -1993,11 +1993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65429ec127f2b2499052f3b300200f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   moveSpeed: 2
   rotateSpeed: 12
-  turret: {fileID: 1463938717}
-  healthText: {fileID: 0}
 --- !u!114 &1166447737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,7 +2056,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1173232360
 GameObject:
   m_ObjectHideFlags: 0

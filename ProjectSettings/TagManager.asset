@@ -12,6 +12,10 @@ TagManager:
   - Score
   - stage1menu
   - levelCompleted
+  - Player2
+  - BlackBullet
+  - GreenBullet
+  - Enemy2
   layers:
   - Default
   - TransparentFX
