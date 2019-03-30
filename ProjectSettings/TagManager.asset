@@ -12,6 +12,7 @@ TagManager:
   - Score
   - stage1menu
   - levelCompleted
+  - Player2
   layers:
   - Default
   - TransparentFX
