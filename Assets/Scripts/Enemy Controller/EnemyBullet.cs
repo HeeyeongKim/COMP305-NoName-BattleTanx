@@ -5,21 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class EnemyBullet : MonoBehaviour
 {
-
     public float bulletSpeed;
     public float bulletDamage;
     public float maxTimeAlive;
     public GameObject explosionPref; // for tanks
     public GameObject explosionPref2; // for woods
 
-    void FixedUpdate()
-    {
-        this.transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
-    }
-
     void Start()
     {
         StartCoroutine(SelfDestruct());
+    }
+
+    void FixedUpdate()
+    {
+        this.transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
     }
 
     IEnumerator SelfDestruct()
