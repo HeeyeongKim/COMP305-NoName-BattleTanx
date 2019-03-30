@@ -6,23 +6,17 @@ using UnityEngine.UI;
 
 public class HomingMissileScript : MonoBehaviour
 {
-    GameObject target;
+    GameObject target; // tutorial wood
     public GameObject explosionPref;
-    public float rotationSpeed = 1f;
-
-    Quaternion rotateToTarget;
-    Vector3 dir;
-
-    Rigidbody2D rb;
 
     public float bulletSpeed;
     public float bulletDamage;
     public float maxTimeAlive;
 
     public static int score;
-    public Text txt4score;
+    private Text txt4score;
 
-    private Animator anim;
+    private Animator anim; // board animation after level completed
 
     private Scene currentScene;
 
@@ -33,7 +27,6 @@ public class HomingMissileScript : MonoBehaviour
         //Debug.Log(currentScene.name);
 
         target = GameObject.Find("targetWood");
-        rb = GetComponent<Rigidbody2D>();
 
         StartCoroutine(SelfDestruct());
 
@@ -52,7 +45,6 @@ public class HomingMissileScript : MonoBehaviour
 
     void Update()
     {
-
         if (currentScene.name.Equals("Stage1"))
         {
             txt4score.text = score + " / 3";
@@ -87,10 +79,14 @@ public class HomingMissileScript : MonoBehaviour
 
             score = score + 1;
         }
+
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            //Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+
+        // Tutorial
         if (other.gameObject.CompareTag("targetWood"))
         {
             Instantiate(explosionPref, transform.position, Quaternion.identity);
@@ -101,26 +97,7 @@ public class HomingMissileScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        //Debug.Log("Update method");
-
-        //dir = (target.transform.position - transform.position).normalized;
-        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //rotateToTarget = Quaternion.Slerp(transform.rotation, rotateToTarget,
-        //    Time.deltaTime * rotationSpeed);
-        //rb.velocity = new Vector2(dir.x*2, dir.y*2);
-    //}
-/** 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("OnTriggerEnter2D method");
-
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
-        Destroy(target);
+    void pauseGame() {
+        Time.timeScale = 0;
     }
-*/
-
 }

@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class Motor : MonoBehaviour
 {
-    public int health = 3;
     public float moveSpeed = 1;
     public float rotateSpeed = 12;
-    public GameObject turret;
-    public Text healthText;
+    private GameObject turret;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -17,7 +15,7 @@ public class Motor : MonoBehaviour
     /// </summary>
     void Start()
     {
-        healthText.text = "Health: " + health.ToString();
+
     }
     
     void FixedUpdate()
@@ -31,7 +29,7 @@ public class Motor : MonoBehaviour
 
     void Update()
     {
-        TurretRotation();
+        //TurretRotation();
     }
 
     void TurretRotation()
