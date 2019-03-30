@@ -99,6 +99,8 @@ MonoBehaviour:
   maxTimeAlive: 3
   explosionPref: {fileID: 5210277940614115417, guid: 8b985aefac916644baa53b96837a2753,
     type: 3}
+  explosionPref2: {fileID: 4747262370030509073, guid: a1342a82daa9ce14496e272490a9c292,
+    type: 3}
 --- !u!50 &3111958301515482526
 Rigidbody2D:
   serializedVersion: 4

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class HomingMissileScript : MonoBehaviour
 {
     GameObject target; // tutorial wood
-    public GameObject explosionPref;
+    public GameObject explosionPref; // for tanks
+    public GameObject explosionPref2; // for woods
 
     public float bulletSpeed;
     public float bulletDamage;
@@ -63,8 +64,13 @@ public class HomingMissileScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            //Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
+        } 
+        else if (other.gameObject.CompareTag("Wood"))
+        {
+            Destroy(gameObject); // destroys the bullet
+            Instantiate(explosionPref2, other.transform.position, other.transform.rotation);
+            Destroy(other.gameObject); // destroys the wood
         }
 
         // Tutorial
