@@ -17,6 +17,8 @@ TagManager:
   - GreenBullet
   - Enemy2
   - Wood
+  - BlueBullet
+  - RedBullet
   layers:
   - Default
   - TransparentFX
