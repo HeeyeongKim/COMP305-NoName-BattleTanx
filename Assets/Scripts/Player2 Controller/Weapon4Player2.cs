@@ -24,6 +24,7 @@ public class Weapon4Player2 : MonoBehaviour
 
     void Shoot()
     {
+        SoundManagerScript.playSound("Shoot");
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 }

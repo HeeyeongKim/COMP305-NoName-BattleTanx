@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ed4285d30f54882b8a6952265d4ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfHits: 4
+  numberOfHits: 3
   champion: {fileID: 0}

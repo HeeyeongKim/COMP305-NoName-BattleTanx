@@ -44,7 +44,7 @@ public class HomingMissileScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
-            SoundManagerScript.playSound();
+            SoundManagerScript.playSound("EnemyExplosion");
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
@@ -69,6 +69,7 @@ public class HomingMissileScript : MonoBehaviour
         } 
         else if (other.gameObject.CompareTag("Wood"))
         {
+            SoundManagerScript.playSound("WoodExplosion");
             Destroy(gameObject); // destroys the bullet
             Instantiate(explosionPref2, other.transform.position, other.transform.rotation);
             Destroy(other.gameObject); // destroys the wood
@@ -77,6 +78,7 @@ public class HomingMissileScript : MonoBehaviour
         // Tutorial
         if (other.gameObject.CompareTag("targetWood"))
         {
+            SoundManagerScript.playSound("WoodExplosion");
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
