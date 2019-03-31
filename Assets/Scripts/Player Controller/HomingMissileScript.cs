@@ -44,6 +44,7 @@ public class HomingMissileScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Enemy2"))
         {
+            SoundManagerScript.playSound();
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
