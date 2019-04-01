@@ -19,6 +19,7 @@ TagManager:
   - Wood
   - BlueBullet
   - RedBullet
+  - Boss
   layers:
   - Default
   - TransparentFX
