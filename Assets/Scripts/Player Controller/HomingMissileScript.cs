@@ -61,6 +61,11 @@ public class HomingMissileScript : MonoBehaviour
                 score += 20;
                 Stage3MenuController.score = score;
             }
+            else if(other.gameObject.CompareTag("Boss"))
+            {
+                score += 30;
+                Stage3MenuController.score = score;
+            }
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
