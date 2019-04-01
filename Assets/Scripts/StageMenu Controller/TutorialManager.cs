@@ -17,7 +17,7 @@ public class TutorialManager : MonoBehaviour
         // popUps[4]: hit the target
 
         if(popUpIndex == 0){
-            if(Input.GetKeyDown(KeyCode.Space)){
+            if(Input.GetKeyDown(KeyCode.Return)){
                 popUps[0].SetActive(false);
                 popUps[1].SetActive(true);
                 popUpIndex++;
@@ -35,12 +35,12 @@ public class TutorialManager : MonoBehaviour
                 popUpIndex++;
             }
         } else if(popUpIndex == 3){
-            if(Input.GetMouseButtonDown(0)){
+            if(Input.GetKeyDown(KeyCode.LeftShift)){
                 popUps[3].SetActive(false);
                 popUps[4].SetActive(true);
                 popUpIndex++;
             }
-        } else if(popUpIndex == 4 && Input.GetMouseButtonDown(0)){
+        } else if(popUpIndex == 4 && Input.GetKeyDown(KeyCode.LeftShift)){
             popUps[4].SetActive(false);
         }
     }
