@@ -83,7 +83,7 @@ public class HomingMissileScript : MonoBehaviour
         // Tutorial
         if (other.gameObject.CompareTag("targetWood"))
         {
-            SoundManagerScript.playSound("WoodExplosion");
+            SoundManagerScript.playSound("EnemyExplosion");
             Instantiate(explosionPref, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             Destroy(other.gameObject);
