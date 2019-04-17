@@ -67,7 +67,7 @@ public class HomingMissileScript : MonoBehaviour
             score += 30;
             Stage3MenuController.score = score;
             BossHealthbarScript.health -= 10f;
-
+            Destroy(this.gameObject);
             if (BossHealthbarScript.health <= 0)
             {
                 Instantiate(explosionPref, other.transform.position, other.transform.rotation);
