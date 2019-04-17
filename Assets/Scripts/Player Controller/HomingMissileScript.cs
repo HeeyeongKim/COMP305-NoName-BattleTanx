@@ -61,10 +61,17 @@ public class HomingMissileScript : MonoBehaviour
                 score += 20;
                 Stage3MenuController.score = score;
             }
-            else if(other.gameObject.CompareTag("Boss"))
+        } 
+        else if(other.gameObject.CompareTag("Boss"))
+        {
+            score += 30;
+            Stage3MenuController.score = score;
+            BossHealthbarScript.health -= 10f;
+
+            if (BossHealthbarScript.health <= 0)
             {
-                score += 30;
-                Stage3MenuController.score = score;
+                Instantiate(explosionPref, other.transform.position, other.transform.rotation);
+                Destroy(other.gameObject); // this destroys the player
             }
         }
 
