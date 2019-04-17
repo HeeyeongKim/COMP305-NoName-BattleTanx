@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 210885103}
   m_Layer: 0
   m_Name: BossBackground
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2752,7 +2752,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 7876285564222970113, guid: a417d4a380564ce47aa907592dc73236,
+      objectReference: {fileID: 2304142978571751851, guid: 94b799b26d8aaa54c953f3faec7da2db,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d17678c296d4e14bb33bf1a92a78af9, type: 3}
@@ -3179,7 +3179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1285700424
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4802,7 +4802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 186.99998}
+  m_AnchoredPosition: {x: 2, y: 186.99998}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826832188
