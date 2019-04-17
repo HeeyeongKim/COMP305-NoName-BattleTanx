@@ -24,10 +24,22 @@ public class shieldController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("BlackBullet") || other.gameObject.CompareTag("BlueBullet") || other.gameObject.CompareTag("RedBullet"))
+        if (other.gameObject.CompareTag("BlackBullet"))
         {
-            Destroy(other.gameObject); // this destroys the enemy
+            Destroy(other.gameObject); // this destroys the enemy bullet
             this.numberOfHits--;
+        } 
+        if(champion.CompareTag("Player")) {
+            if (other.gameObject.CompareTag("BlueBullet"))
+            {
+                Destroy(other.gameObject); // this destroys the another players bullet
+            } 
+        }
+        if(champion.CompareTag("Player2")) {
+            if (other.gameObject.CompareTag("BulletRed"))
+            {
+                Destroy(other.gameObject); // this destroys the another players bullet
+            } 
         }
 
     }
