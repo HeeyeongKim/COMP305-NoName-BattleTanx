@@ -6,18 +6,20 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
     private int popUpIndex = 0;
+    public GameObject enemy;
     
     // Update is called once per frame
     void Update()
     {
-        // popUps[0]: press space bar
+        // popUps[0]: press Enter
         // popUps[1]: press A,D
         // popUps[2]: press W,S
-        // popUps[3]: press left mouse button
+        // popUps[3]: press space bar
         // popUps[4]: hit the target
+        // popUps[5]: shoot the enemy
 
         if(popUpIndex == 0){
-            if(Input.GetKeyDown(KeyCode.Space)){
+            if(Input.GetKeyDown(KeyCode.Return)){
                 popUps[0].SetActive(false);
                 popUps[1].SetActive(true);
                 popUpIndex++;
@@ -35,13 +37,14 @@ public class TutorialManager : MonoBehaviour
                 popUpIndex++;
             }
         } else if(popUpIndex == 3){
-            if(Input.GetMouseButtonDown(0)){
+            if(Input.GetKeyDown(KeyCode.Space)){
                 popUps[3].SetActive(false);
                 popUps[4].SetActive(true);
                 popUpIndex++;
             }
-        } else if(popUpIndex == 4 && Input.GetMouseButtonDown(0)){
+        } else if(popUpIndex == 4){
             popUps[4].SetActive(false);
-        }
+            enemy.SetActive(true);
+        } 
     }
 }
