@@ -143,8 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPref: {fileID: 5210277940614115417, guid: 8b985aefac916644baa53b96837a2753,
     type: 3}
-  rotationSpeed: 1
+  explosionPref2: {fileID: 4747262370030509073, guid: a1342a82daa9ce14496e272490a9c292,
+    type: 3}
   bulletSpeed: 4
   bulletDamage: 0
   maxTimeAlive: 3
-  txt4score: {fileID: 0}

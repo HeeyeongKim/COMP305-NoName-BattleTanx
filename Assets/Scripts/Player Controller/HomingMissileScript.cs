@@ -86,6 +86,18 @@ public class HomingMissileScript : MonoBehaviour
             Instantiate(explosionPref2, other.transform.position, other.transform.rotation);
             Destroy(other.gameObject); // destroys the wood
         }
+        
+        // Check if this is Player1 or Payer2
+        if (this.gameObject.CompareTag("BulletRed"))
+        {
+            if(other.gameObject.CompareTag("Player2"))
+                Destroy(this.gameObject);
+        }
+        else if (this.gameObject.CompareTag("BlueBullet"))
+        {
+             if(other.gameObject.CompareTag("Player"))
+                Destroy(this.gameObject);
+        }
 
         // Tutorial
         if (other.gameObject.CompareTag("targetWood"))
