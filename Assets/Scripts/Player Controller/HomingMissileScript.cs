@@ -65,7 +65,7 @@ public class HomingMissileScript : MonoBehaviour
         else if(other.gameObject.CompareTag("Boss"))
         {
             score += 30;
-            Stage3MenuController.score = score;
+            BossMenuController.score = score;
             BossHealthbarScript.health -= 10f;
             Destroy(this.gameObject);
             if (BossHealthbarScript.health <= 0)

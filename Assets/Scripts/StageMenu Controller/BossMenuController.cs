@@ -18,7 +18,7 @@ public class BossMenuController : MonoBehaviour
     {
         txtScore.text = "SCORE: " + score.ToString();
 
-        if (score >= 200)
+        if (score >= 500 && BossHealthbarScript.health <= 0)
         {
             anim.SetBool("isFinished", true);
         }
