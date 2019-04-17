@@ -45,6 +45,8 @@ public class TutorialManager : MonoBehaviour
         } else if(popUpIndex == 4){
             popUps[4].SetActive(false);
             enemy.SetActive(true);
+            //After enemy destruction, Nullpointer error happens
+            popUpIndex++;
         } 
     }
 }

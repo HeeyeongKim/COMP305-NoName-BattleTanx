@@ -34,10 +34,15 @@ public class Stage2MenuController : MonoBehaviour
     // What happens when I click the quit button?
     public void QuitGame()
     {
+        //score initialization
         HomingMissileScript.score = 0;
+        Stage1MenuController.score = 0;
+        score = 0;
+        Stage3MenuController.score = 0;
+        BossMenuController.score = 0;
         // Preprocessor Directives
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
         #else
              Application.Quit();
         #endif

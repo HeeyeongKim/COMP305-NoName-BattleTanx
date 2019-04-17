@@ -73,6 +73,10 @@ public class EnemyBullet : MonoBehaviour
             {
                 //Initialize score;
                 HomingMissileScript.score = 0;
+                Stage1MenuController.score = 0;
+                Stage2MenuController.score = 0;
+                Stage3MenuController.score = 0;
+                BossMenuController.score = 0;
                 SceneManager.LoadScene("GameOver");
                 Debug.Log("GameOver");
             }
